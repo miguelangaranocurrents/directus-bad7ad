@@ -16,8 +16,9 @@ onUnmounted(unwatch);
 		<TooltipTrigger as="span" :reference="state.virtualRef" aria-hidden="true" :tabindex="-1" style="display: none" />
 		<TooltipPortal>
 			<TooltipContent
-				v-if="state.open"
+				v-show="state.open"
 				:id="TOOLTIP_CONTENT_ID"
+				force-mount
 				:side="state.side"
 				:align="state.align"
 				:side-offset="8"
